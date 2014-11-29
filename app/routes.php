@@ -11,7 +11,13 @@
 |
 */
 
+/**
+ * 認証フィルタ
+ */
+Route::when('', 'auth'); 
+
 Route::get('/', function()
 {
 	return View::make('hello');
 });
+
