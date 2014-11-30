@@ -18,7 +18,9 @@ class CreateUserTable extends Migration {
                 $table->increments('id');
                 $table->string('username', 20);
                 $table->string('password', 64);
+                $table->string('remember_token')->nullable();
                 $table->timestamps();
+                $table->softDeletes();
             });
         }
 	}
@@ -30,7 +32,7 @@ class CreateUserTable extends Migration {
 	 */
 	public function down()
 	{
-        Schema::dropIfExists('users');
+        Schema::sdroIfExists('users');
 	}
 
 }
